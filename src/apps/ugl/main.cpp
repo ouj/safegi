@@ -6,8 +6,8 @@
 #include <GL/wglew.h>
 #include <GL/glut.h>
 #else
-#include <GL/glew.h>
-#include <GL/glut.h>
+#include <OpenGL/OpenGL.h>
+#include <GLUT/GLUT.h>
 #endif
 
 #include <stdio.h>

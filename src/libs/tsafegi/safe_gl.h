@@ -8,11 +8,15 @@
 using std::map;
 using std::string;
 
+#ifdef USE_SAFE_GL
 #ifdef WIN32
-#include <GL/glew.h>
-#include <GL/wglew.h>
+#include <gl/glew.h>
+#include <gl/glut.h>
 #else
-#include <GL/glew.h>
+#include <OpenGL/OpenGL.h>
+#include <GLUT/GLUT.h>
+#endif
+#include "safe_gl.h"
 #endif
 
 #include <assert.h>

@@ -17,7 +17,7 @@ struct rrSample {
     real pdf;
 
     rrSample() : stop(false), pdf(1) { }
-    rrSample(bool strop, const real& pdf) : stop(stop), pdf(pdf) { }
+    rrSample(bool st, const real& pdf) : stop(st), pdf(pdf) { }
 };
 
 inline lightSample uniformsample(const std::vector<shared_ptr<Light>>& lights) {

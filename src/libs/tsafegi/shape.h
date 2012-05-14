@@ -4,12 +4,13 @@
 
 #ifdef USE_SAFE_GL
 #ifdef WIN32
-#include <GL/glew.h>
-#include <GL/wglew.h>
+#include <gl/glew.h>
+#include <gl/glut.h>
 #else
-#include <GL/glew.h>
+#include <OpenGL/OpenGL.h>
+#include <GLUT/GLUT.h>
 #endif
-#include"safe_gl.h"
+#include "safe_gl.h"
 #endif
 
 
@@ -112,7 +113,6 @@ private:
         int nTriangles = nPhi*nTheta*2;
 
         tesselated_vertex_num = nTriangles * 3;
-        const double PI = 3.1415926;
 
         std::vector<point<shape_s>> pos(nVertex);
         std::vector<normal<shape_s>> norm(nVertex);

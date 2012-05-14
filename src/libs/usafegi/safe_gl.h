@@ -10,7 +10,8 @@ using std::string;
 #include <GL/glew.h>
 #include <GL/wglew.h>
 #else
-#include <GL/glew.h>
+#include <OpenGL/OpenGL.h>
+#include <GLUT/GLUT.h>
 #endif
 
 #include <assert.h>

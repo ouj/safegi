@@ -7,8 +7,8 @@ using std::tr1::static_pointer_cast;
 
 struct Mesh : public Shape {
     std::vector<point<shape_s>> pos;
-    std::vector<int> faces;
     std::vector<normal<shape_s>> norm;
+    std::vector<int> faces;
     shared_ptr<BBox> group;
 
     Mesh(const std::vector<point<shape_s>>& pos, const std::vector<int>& faces) : pos(pos), faces(faces) {

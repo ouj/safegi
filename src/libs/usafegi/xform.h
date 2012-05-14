@@ -23,7 +23,8 @@ struct AnimatedTranslationXform : public Xform {
     real t0, t1;
 
     AnimatedTranslationXform(const vector& pos0, const real& t0, 
-                             const vector& pos1, const real& t1) : pos0(pos0), t0(t0), pos1(pos1), t1(t1) { }
+                             const vector& pos1, const real& t1) : 
+                             pos0(pos0), pos1(pos1), t0(t0), t1(t1) { }
 
     virtual rigidmap sample(const real& t) { 
         vector pos;

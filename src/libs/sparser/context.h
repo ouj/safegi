@@ -11,9 +11,7 @@ using std::string;
 using std::map;
 using std::tr1::shared_ptr;
 
-struct cx_node
-{
-};
+struct cx_node {};
 
 typedef t_var cx_in;
 typedef t_var cx_out;
@@ -21,15 +19,15 @@ typedef t_var cx_out;
 struct cx_function : public cx_node
 {
     cx_function(const shared_ptr<t_ano_type> returnt, const string &fn) 
-        : cx_node(), type(returnt), name(fn) {}
+        : cx_node(), name(fn), type(returnt) {}
     cx_function(const shared_ptr<t_ano_type> returnt, const string &fn, const vector<shared_ptr<t_ano_type>> &tp) 
-        : cx_node(), type(returnt), name(fn), tparas(tp) {}
+        : cx_node(), name(fn), type(returnt), tparas(tp) {}
     virtual ~cx_function() {}
 
     shared_ptr<t_ano_type> accept(const vector<shared_ptr<t_ano_type>> &arg_type_list);
 
     string                                 name;
-    shared_ptr<t_ano_type>                      type;
+    shared_ptr<t_ano_type>                 type;
     vector<shared_ptr<t_ano_type>>         tparas;
 };
 
@@ -37,13 +35,13 @@ struct cx_bin_function : public cx_node
 {
     cx_bin_function(const shared_ptr<t_ano_type> returnt, const string &fn, 
         const vector<t_var> &p, const string &sig, const string& rc) 
-        : cx_node(), type(returnt), name(fn), paras(p), signature(sig), raw_code(rc) {}
+        : cx_node(), name(fn), type(returnt), paras(p), raw_code(rc), signature(sig) {}
     virtual ~cx_bin_function() {}
 
     shared_ptr<t_ano_type> accept(const vector<shared_ptr<t_ano_type>> &arg_type_list, string *inject_code = NULL);
 
     string                                 name;
-    shared_ptr<t_ano_type>                      type;
+    shared_ptr<t_ano_type>                 type;
     vector<t_var>                          paras;
     string                                 raw_code;
     string                                 signature;
@@ -71,10 +69,10 @@ struct cx_generic_ano_type : public cx_node
 struct cx_generic_ano_para : public cx_node
 {
     cx_generic_ano_para(const cx_generic_ano_type &t, const string& n) 
-        : cx_node(), type(t), name(n){}
+        : cx_node(), name(n), type(t) {}
     virtual ~cx_generic_ano_para() {}
 
-    string name;
+    string              name;
     cx_generic_ano_type type;
 };
 
@@ -96,17 +94,17 @@ struct cx_bin_ano_function : public cx_node
 {
     cx_bin_ano_function(const string &fname, const vector<string> &ano_list, const cx_generic_ano_type &rtype, 
         const vector<cx_generic_ano_para> &plist, const string& sig, const string& rc) 
-        : cx_node(), name(fname), ano_list(ano_list), ret_type(rtype), paralist(plist), signature(sig), raw_code(rc) {} 
+        : cx_node(), name(fname), ano_list(ano_list), ret_type(rtype), paralist(plist), raw_code(rc), signature(sig) {} 
 
     virtual ~cx_bin_ano_function() {}
     shared_ptr<t_ano_type> accept(const vector<shared_ptr<t_ano_type>> &arg_type_list, string *code = NULL);
 
-    string name;
-    vector<string> ano_list;
-    cx_generic_ano_type ret_type;
+    string                      name;
+    vector<string>              ano_list;
+    cx_generic_ano_type         ret_type;
     vector<cx_generic_ano_para> paralist;
-    string raw_code;
-    string signature;
+    string                      raw_code;
+    string                      signature;
 };
 
 struct cx_define : public cx_node

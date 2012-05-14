@@ -69,8 +69,7 @@ struct Phong : public Brdf {
         if(wo.z <= 0 || !smooth) return brdfSample<local_s>();
 
         real pd = averageCmp(rhod) / (averageCmp(rhod)+averageCmp(rhos));
-        real ps = averageCmp(rhos) / (averageCmp(rhod)+averageCmp(rhos));
-
+ 
         direction<local_s> wi;
         if(pd < rl) {
             auto s = sampleHemisphericalCos(ra);

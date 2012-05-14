@@ -29,6 +29,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/../bin/${BIN_DIR_SUFFIX
 #include directories
 include_directories(/usr/local/include)
 include_directories(/usr/include)
+include_directories(${PROJECT_SOURCE_DIR}/libs)
 
 # libraries
 find_package(GLUT)
@@ -41,9 +42,9 @@ endif()
 # set default build to release
 set(CMAKE_BUILD_TYPE Release)
 
-add_subdirectory(libs/t/safegi/ lib/tsafegi)
-add_subdirectory(libs/u/safegi/ lib/usafegi)
-add_subdirectory(libs/t/sparser lib/sparser)
+add_subdirectory(libs/tsafegi)
+add_subdirectory(libs/usafegi)
+add_subdirectory(libs/sparser)
 add_subdirectory(libs/gi_aux)
 
 add_subdirectory(apps/tgl)
