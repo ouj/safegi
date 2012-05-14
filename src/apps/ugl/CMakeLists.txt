@@ -12,4 +12,4 @@ ADD_EXECUTABLE(ugl ${SOURCES})
 include_directories(../../libs/u/)
 
 
-TARGET_LINK_LIBRARIES(ugl gi_aux ${LIBS_glew} ${LIBS_glut})
+TARGET_LINK_LIBRARIES(ugl gi_aux ${OPENGL_gl_LIBRARY} ${GLUT_LIBRARIES})

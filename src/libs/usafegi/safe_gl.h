@@ -51,7 +51,7 @@ inline void safeglCreateTexture2D(TexId &s, GLenum target,  GLint internalFormat
     if (internalFormat == GL_DEPTH_COMPONENT32)
         glTexImage2D( GL_TEXTURE_2D, level, GL_DEPTH_COMPONENT32, width, height, border, GL_DEPTH_COMPONENT, GL_UNSIGNED_BYTE, data);
     else
-        glTexImage2D( GL_TEXTURE_2D, level, GL_RGB32F, width, height, border, GL_RGBA, GL_FLOAT, data);
+        glTexImage2D( GL_TEXTURE_2D, level, GL_RGB32F_ARB, width, height, border, GL_RGBA, GL_FLOAT, data);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
     glTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP );

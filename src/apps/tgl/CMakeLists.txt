@@ -12,4 +12,4 @@ ADD_EXECUTABLE(tgl ${SOURCES})
 INCLUDE_DIRECTORIES(../../libs/t)
 
 
-TARGET_LINK_LIBRARIES(tgl sparser tsafegi gi_aux ${LIBS_glew} ${LIBS_glut})
+TARGET_LINK_LIBRARIES(tgl sparser tsafegi gi_aux ${OPENGL_gl_LIBRARY} ${GLUT_LIBRARIES})

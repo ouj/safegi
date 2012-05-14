@@ -118,7 +118,7 @@ void gl_renderer::_setup_shadow_map()
     safeglGenFramebuffer(&targetFboId);
     safeglBindFramebuffer(&targetFboId);
 
-    safeglCreateTexture2D(targetTexId, GL_TEXTURE_2D, GL_RGB32F, 0, IMAGE_WIDTH, IMAGE_HEIGHT, 0, NULL);
+    safeglCreateTexture2D(targetTexId, GL_TEXTURE_2D, GL_RGB32F_ARB, 0, IMAGE_WIDTH, IMAGE_HEIGHT, 0, NULL);
     safeglFramebufferColorTexture2D(&targetFboId, targetTexId);
 
     safeglCreateTexture2D(targetDepthTexId, GL_TEXTURE_2D, GL_DEPTH_COMPONENT32, 0, IMAGE_WIDTH, IMAGE_HEIGHT, 0, NULL);
@@ -131,7 +131,7 @@ void gl_renderer::_setup_shadow_map()
     safeglGenFramebuffer(&blendFboId);
     safeglBindFramebuffer(&blendFboId);
 
-    safeglCreateTexture2D(blendTexId, GL_TEXTURE_2D, GL_RGB32F, 0, IMAGE_WIDTH, IMAGE_HEIGHT, 0, NULL);
+    safeglCreateTexture2D(blendTexId, GL_TEXTURE_2D, GL_RGB32F_ARB, 0, IMAGE_WIDTH, IMAGE_HEIGHT, 0, NULL);
     safeglFramebufferColorTexture2D(&blendFboId, blendTexId);
 
     FBOstatus = glCheckFramebufferStatus(GL_FRAMEBUFFER_EXT);
