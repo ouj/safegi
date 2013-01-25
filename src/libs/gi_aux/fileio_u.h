@@ -6,7 +6,7 @@ void save(const image<spectrum>& img, const string& filename, const real& s) {
 
 	FILE* f = fopen(filename.c_str(), "wt");
 	
-	fprintf(f, "P3\n#safegi\n");
+	fprintf(f, "P3\n\n");
     fprintf(f, "%d %d\n", w, h);
 	fprintf(f, "255\n");
 

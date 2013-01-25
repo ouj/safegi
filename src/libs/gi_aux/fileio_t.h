@@ -7,7 +7,7 @@ void save(const image<spectrum<radiance_d>>& img, const string& filename, const 
 
 	FILE* f = fopen(filename.c_str(), "wt");
 	
-	fprintf(f, "P3\n#safegi\n");
+	fprintf(f, "P3\n");
     fprintf(f, "%d %d\n", w, h);
 	fprintf(f, "255\n");
 

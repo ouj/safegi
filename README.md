@@ -3,6 +3,24 @@ overview
 This package contains the source code implementation of our [safegi paper](http://www.cs.dartmouth.edu/~ouj/site/Research/Entries/2010/6/28_SafeGI__Type_Checking_to_Improve_Correctness_in_Rendering_System_Implementation.html).
 
 
+build
+-----------------------------------------------------------
+__MacOSX__
+
+    cd src
+    ./cmake-xcode.sh
+
+__Linux__
+
+    cd src
+    ./cmake-mk.sh
+
+execution
+-----------------------------------------------------------
+run the executable directly, the images will be generated in the same folder. Image files are ppm format, it can be convert to other formats using ImageMagick.
+
+
+
 folder structure
 -----------------------------------------------------------
 #### README.md ####
